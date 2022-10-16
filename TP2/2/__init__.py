@@ -1,0 +1,14 @@
+
+def calcula_versor(versores):
+    x = 1/(((versores[0]**2)+(versores[1]**2)+(versores[2]**2))**(1/2))
+    return ((versores[0]*x), (versores[1]*x), (versores[2]*x)),x
+
+def pega_versor():
+    versor = []
+    print("Versor de um Vetor:\nCoordenadas do vetor:")
+    for x in range(3):
+        versor.append(float(input("Digite a %da. coordenada: "%(x+1))))
+    Nversor, x = calcula_versor(versores=versor)
+    print("Versor: 1/{0:.2f} ({1:.2f}, {2:.2f}, {3:.2f})".format(x**-1,*versor))
+    print("Versor: ({0:.2f}, {1:.2f}, {2:.2f})".format(*Nversor))
+pega_versor()
