@@ -18,10 +18,12 @@ cordenada = []
 print("Plano:")
 for x in range(3):
     cordenada.append([])
-    print("Coordenadas do ponto %s" % ["A", "B", "C"][x])
+    print("Coordenadas do ponto %s:" % ["A", "B", "C"][x])
     for y in range(3):
-        cordenada[x].append(float(input("Digite a  %da.coordenada: " % (y+1))))
+        cordenada[x].append(float(input("Digite a %da. coordenada: " % (y+1))))
 # montando o vetor AB
 AB = [(y - x) for x, y in zip(cordenada[0], cordenada[1])]
 # Eq.simetrica
 Eqsim = [(x-xo)/a  for a, x, xo in zip(AB, cordenada[2], cordenada[0])]
+resposta = "O ponto C pertence a reta." if (Eqsim[0] == Eqsim[1] == Eqsim[2]) else "O ponto C não pertence a reta."
+print(resposta)
